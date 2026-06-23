@@ -5,7 +5,7 @@ from pypdf import PdfReader
 # =========================
 # Gemini API Key
 # =========================
-client = genai.Client(api_key="YOUR_ACTUAL_GEMINI_API_KEY")
+client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
 # =========================
 # Page Settings
 # =========================
