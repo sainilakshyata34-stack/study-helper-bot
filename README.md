@@ -1,19 +1,39 @@
-# 🎈 Blank app template
+📚 Study Helper Bot
 
-A simple Streamlit app template for you to modify!
+An AI-powered Study Helper Bot built using Streamlit and Google's Gemini AI.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+Features
 
-### How to run it on your own machine
+- Ask study-related questions
+- Generate detailed notes
+- Summarize PDFs
+- Get AI-powered explanations
+- Easy-to-use Streamlit interface
 
-1. Install the requirements
+Requirements
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+- Python 3.10+
+- Streamlit
+- Google Gemini API
+- PyPDF
 
-2. Run the app
+Installation
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+pip install -r requirements.txt
+
+Run the App
+
+streamlit run app.py
+
+Technologies Used
+
+- Streamlit
+- Google Gemini AI
+- PyPDF
+- Python
+
+Author
+
+Lakshyata 
+
+Laxmi
