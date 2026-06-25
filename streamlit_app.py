@@ -21,9 +21,9 @@ user_key = st.text_input(
 )
 
 if user_key:
-    api_key = user_key
+    st.success("🔑 Personal API Key Mode Active")
 else:
-    api_key = st.secrets["GEMINI_API_KEY"]  # your shared key
+    st.info("🚀 Shared API Key Mode Active")  # your shared key
 
 client = genai.Client(api_key=api_key)
 
@@ -82,6 +82,7 @@ with st.sidebar:
             "Notes Generator",
             "Quiz Generator",
             "Study Planner"
+            "Flashcard Generator"
         ]
     )
 
@@ -161,6 +162,31 @@ if user_input:
         - Revision plan
         - Productivity tips
         """
+        elif mode == "Flashcard Generator":
+
+    if uploaded_file and pdf_text.strip():
+        prompt = f"""
+        Create 10 important flashcards from this PDF.
+
+        Format:
+
+        Flashcard 1
+        Q:
+        A:
+
+        Flashcard 2
+        Q:
+        A:
+
+        PDF Content:
+        {pdf_text[:10000]}
+        """
+    else:
+        prompt = f"""
+        Create 10 study flashcards about:
+
+        {user_input}
+        """
 
     # =========================
     # PDF Integration
@@ -195,6 +221,12 @@ if user_input:
                 answer = response.text
 
                 st.markdown(answer)
+                st.download_button(
+    label="📥 Download Notes",
+    data=answer,
+    file_name="study_notes.txt",
+    mime="text/plain"
+)
 
                 st.session_state.messages.append(
                     {
