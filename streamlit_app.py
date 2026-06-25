@@ -163,19 +163,19 @@ if user_input:
         - Productivity tips
         """
         
-        elif mode == "Flashcard Generator":
+    elif mode == "Flashcard Generator":
 
-    if uploaded_file and pdf_text.strip():
-        prompt = f"""
-        Create 10 important flashcards from this PDF.
+       if uploaded_file and pdf_text.strip():
+           prompt = f"""
+           Create 10 important flashcards from this PDF.
 
-        Format:
+           Format:
 
-        Flashcard 1
-        Q:
-        A:
+           Flashcard 1
+           Q:
+           A:
 
-        Flashcard 2
+           Flashcard 2
         Q:
         A:
 
