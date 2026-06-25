@@ -1,12 +1,33 @@
 import streamlit as st
 from google import genai
 from pypdf import PdfReader
+st.set_page_config(
+    page_title="Study Helper Bot",
+    page_icon="📚",
+    layout="wide"
+)
+st.info("""
+🚀 Free Mode:
+Using the app's shared API key.
+Questions may be limited if the shared quota is exhausted.
 
-# =========================
-# Gemini API Key
-# =========================
-client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
-# =========================
+🔑 Personal API Key Mode:
+Enter your own Gemini API key for higher usage limits.
+""")
+
+user_key = st.text_input(
+    "Enter your Gemini API Key (Optional)",
+    type="password"
+)
+
+if user_key:
+    api_key = user_key
+else:
+    api_key = st.secrets["GEMINI_API_KEY"]  # your shared key
+
+client = genai.Client(api_key=api_key)
+
+
 # Page Settings
 # =========================
 st.set_page_config(
