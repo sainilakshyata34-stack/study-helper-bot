@@ -162,6 +162,7 @@ if user_input:
         - Revision plan
         - Productivity tips
         """
+        
         elif mode == "Flashcard Generator":
 
     if uploaded_file and pdf_text.strip():
