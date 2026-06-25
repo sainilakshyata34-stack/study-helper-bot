@@ -21,8 +21,10 @@ user_key = st.text_input(
 )
 
 if user_key:
+    aoi_key = user_key
     st.success("🔑 Personal API Key Mode Active")
 else:
+    api_key = st.secrets["GEMINI_API_KEY"]
     st.info("🚀 Shared API Key Mode Active")  # your shared key
 
 client = genai.Client(api_key=api_key)
