@@ -83,7 +83,7 @@ with st.sidebar:
             "Ask Question",
             "Notes Generator",
             "Quiz Generator",
-            "Study Planner"
+            "Study Planner",
             "Flashcard Generator"
         ]
     )
